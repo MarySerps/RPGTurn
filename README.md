@@ -1,18 +1,24 @@
-## Getting Started
+# ⚔️ RPGTurn - Batalha de Turnos em Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Um sistema de combate RPG por turnos via console desenvolvido em Java. Este projeto foi criado para aplicar e demonstrar conceitos sólidos de **Programação Orientada a Objetos (POO)** e Clean Code.
 
-## Folder Structure
+*Uma pequena aventura de código, perfeita para testar lógicas de combate, raças e classes inspiradas em campanhas de mesa (como Ecos do Abismo).*
 
-The workspace contains two folders by default, where:
+## 🧠 Conceitos Técnicos Aplicados
+* **Classes Abstratas:** Criação de um modelo base seguro (`Player`) que não pode ser instanciado diretamente.
+* **Herança e Polimorfismo:** Classes específicas (`Warrior`) que herdam características e sobrescrevem métodos (como o `attack`).
+* **Encapsulamento:** Proteção dos atributos de status (HP, Força) usando modificadores de acesso (`private`/`protected`) e métodos Getters/Setters.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 🚀 Funcionalidades (Status do Projeto)
+- [x] Estrutura base de Entidades (Player).
+- [x] Criação da classe Guerreiro (Warrior).
+- [x] Sistema seguro de alteração de nomes.
+- [ ] Criar a classe Inimigo/Monstro.
+- [ ] Implementar o Game Loop (A batalha rodando em turnos).
+- [ ] Adicionar novas classes (ex: Mago) e raças (ex: Tiefling, Meio-Orc).
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## 💻 Como rodar o projeto localmente
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+1. Clone este repositório:
+   ```bash
+   git clone [https://github.com/MarySerps/RPGTurn.git](https://github.com/MarySerps/RPGTurn.git)
