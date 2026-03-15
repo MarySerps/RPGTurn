@@ -2,14 +2,21 @@ public abstract class Player {
     private String name;
     private int hp;
     private int strength;
+    private int intelligence;
 
-    public Player (String name, int hp, int strength) {
+    public Player (String name, int hp, int strength, int intelligence) {
         this.name = name;
         this.hp = hp;
         this.strength = strength;
+        this.intelligence = intelligence;
     }
 
     public String getName() {
+        return name;
+    }
+
+    public String setName(String name) {
+        this.name = name;
         return name;
     }
 
@@ -21,9 +28,10 @@ public abstract class Player {
         return strength;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getIntelligence() {
+        return intelligence;
     }
+
 
     public abstract void attack (Player target);
 
