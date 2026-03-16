@@ -38,8 +38,10 @@ public abstract class Player {
     public void takeDamage (int damage) {
         this.hp -= damage;
         if (this.hp < 0) this.hp = 0;
-        System.out.println (name + "recebe" + damage + "de dano, vida restante: " + hp);
-    }
 
+        if (this.hp == 0) {
+            // Handle player defeat logic if needed
+        }
+    }
 
 }
