@@ -8,7 +8,6 @@ public class Warrior extends Player  {
 
         int danoEspecial = this.getStrength() * 2;
         target.takeDamage(danoEspecial);
-
         this.takeDamage(5);
     }
 
