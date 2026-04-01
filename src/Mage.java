@@ -10,9 +10,9 @@ public class Mage extends Player {
         target.takeDamage(danoNormal);
     }
 
-    public void spellAttack(Player target) {
+    public void specialAttack(Player target) {
         int danoMagico = this.getIntelligence() + 10;
-        target.takeDamage(this.getIntelligence());
+        target.takeDamage(danoMagico);
     }
 
     @Override

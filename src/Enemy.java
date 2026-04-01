@@ -4,6 +4,16 @@ public class Enemy extends Player {
         super(name, hp, strength, 0);
     }
 
+    public void Attack (Player target) {
+        int danoNormal = this.getStrength();
+        target.takeDamage(danoNormal);
+    }
+
+    public void specialAttack (Player target) {
+        int danoEspecial = this.getStrength();
+        target.takeDamage(danoEspecial);
+    }
+
     @Override
     public void attack(Player target) {
         // Simulando a rolagem de um d6 (valores de 1 a 6) para somar ao dano

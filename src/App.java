@@ -34,6 +34,37 @@ public class App {
                 break;
         }
 
-        
+        Enemy boss = new Enemy("Líder orc", 45, 16);
+        System.out.println ("Um " + boss.getName() + " apareceu! Prepare-se para a batalha!");
+
+        while (player.getHp() > 0 && boss.getHp() > 0) {
+            System.out.println ("Seu turno! " + player.getName() + " HP: " + player.getHp());
+            System.out.println ("1. Ataque Normal");
+            System.out.println ("2. Ataque Especial");
+
+            int acao = scanner.nextInt();
+
+            switch (acao) {
+                case 1: 
+                    player.attack(boss);
+                    System.out.println (">> Você atacou o " + boss.getName() + " e causou dano! HP do inimigo: " + boss.getHp());
+                    break;
+                case 2:
+                    player.specialAttack(boss);
+                    System.out.println (">> Você usou um ataque especial no " + boss.getName() + " e causou dano! HP do inimigo: " + boss.getHp());
+                    break;
+            }
+
+            if (boss.getHp() > 0) {
+                System.out.println ("Turno do inimigo! " + boss.getName() + " HP: " + boss.getHp());
+                boss.attack(player);
+            }
+        }
+
+        if (player.getHp() > 0) {
+            System.out.println ("Parabéns! Você derrotou o " + boss.getName() + " e venceu a batalha!");
+        } else {
+            System.out.println ("Você foi derrotado pelo " + boss.getName() + ". Melhor sorte na próxima vez!");
+        }
     }
 }

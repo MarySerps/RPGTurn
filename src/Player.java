@@ -43,6 +43,8 @@ public abstract class Player {
 
     public abstract void attack (Player target);
 
+    public abstract void specialAttack (Player target);
+
     public void takeDamage (int damage) {
         this.hp -= damage;
 
