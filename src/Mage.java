@@ -1,7 +1,8 @@
 public class Mage extends Player {
     
-    public Mage (String name, int hp, int intelligence) {
-        super(name, 120, 0, 35);
+    //atributos definidos com base em D&D, personagem Nivel 5
+    public Mage (String name) {
+        super(name, 32, 8, 18);
     }
 
     public void spellAttack(Player target) {

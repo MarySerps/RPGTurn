@@ -50,5 +50,7 @@ public abstract class Player {
             this.hp = 0;
         }
     }
+
+    
 }
 

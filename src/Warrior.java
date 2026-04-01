@@ -1,7 +1,8 @@
 public class Warrior extends Player  {
     
-    public Warrior (String name, int hp, int strength) {
-        super(name, 200, 25, 0);
+    //atributos definidos com base em D&D, personagem Nivel 5
+    public Warrior (String name) {
+        super(name, 49, 18, 10);
     }
 
     public void specialAttack (Player target){
