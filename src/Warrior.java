@@ -5,20 +5,21 @@ public class Warrior extends Player  {
         super(name, 49, 18, 10);
     }
 
-    public void Attack (Player target) {
-        int danoNormal = this.getStrength();
-        target.takeDamage(danoNormal);
+    @Override
+    public void attack (Player target) {
+        int dano = this.getStrength();
+
+        System.out.println("Com um grito de guerra: " + this.getName() + " ataca " + target.getName() + " causando " + dano + " de dano!");
+        target.takeDamage(dano);
     }
 
-    public void specialAttack (Player target){
-
+    @Override
+    public void specialAttack (Player target) {
         int danoEspecial = this.getStrength() * 2;
+
+        System.out.println(this.getName() + " usa um ataque especial contra " + target.getName() + " causando " + danoEspecial + " de dano, mas sofre 5 de dano em retaliação!");
         target.takeDamage(danoEspecial);
         this.takeDamage(5); //custo pra usar o ataque
     }
 
-    @Override
-    public void attack (Player target) {
-        target.takeDamage(this.getStrength());
-    }
 }
