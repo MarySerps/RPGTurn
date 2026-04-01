@@ -5,6 +5,11 @@ public class Mage extends Player {
         super(name, 32, 8, 18);
     }
 
+    public void Attack (Player target) {
+        int danoNormal = this.getIntelligence();
+        target.takeDamage(danoNormal);
+    }
+
     public void spellAttack(Player target) {
         int danoMagico = this.getIntelligence() + 10;
         target.takeDamage(this.getIntelligence());

@@ -5,6 +5,11 @@ public class Warrior extends Player  {
         super(name, 49, 18, 10);
     }
 
+    public void Attack (Player target) {
+        int danoNormal = this.getStrength();
+        target.takeDamage(danoNormal);
+    }
+
     public void specialAttack (Player target){
 
         int danoEspecial = this.getStrength() * 2;
