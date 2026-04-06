@@ -5,7 +5,7 @@ public class App {
         Scanner scanner = new Scanner (System.in);
         Player player = null;
 
-        System.out.println ("------ ⚔️ Bem-vindo ao RPGTurn ⚔️ ------");
+        System.out.println ("------  Bem-vindo ao RPGTurn  ------");
 
         //Definir nome do personagem
         System.out.print ("Digite o nome do seu personagem: ");
