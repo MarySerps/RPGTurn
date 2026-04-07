@@ -2,7 +2,7 @@ public class Warrior extends Player  {
     
     //atributos definidos com base em D&D, personagem Nivel 5
     public Warrior (String name) {
-        super(name, 49, 18, 10);
+        super(name, 49, 18, 10, 8, 12, 14);
     }
 
     @Override

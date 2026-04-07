@@ -1,7 +1,7 @@
 public class Enemy extends Player {
     
     public Enemy (String name, int hp, int strength){
-        super(name, hp, strength, 0);
+        super(name, hp, strength, 0, 0, 0, 0);
     }
 
     public void Attack (Player target) {

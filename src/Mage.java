@@ -2,7 +2,7 @@ public class Mage extends Player {
     
     //atributos definidos com base em D&D, personagem Nivel 5
     public Mage (String name) {
-        super(name, 32, 8, 18);
+        super(name, 32, 8, 18, 12, 10, 8);
     }
 
     @Override
