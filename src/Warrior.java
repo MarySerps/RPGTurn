@@ -6,20 +6,21 @@ public class Warrior extends Player  {
     }
 
     @Override
-    public void attack (Player target) {
-        int rolagemDado = (int)(Math.random() * 6) + this.getStrength();
-
-        System.out.println("Com um grito de guerra: " + this.getName() + " ataca " + target.getName() + " causando " + rolagemDado + " de dano!");
-        target.takeDamage(rolagemDado);
+    public int attack() {
+        int rolagemDado = (int)(Math.random() * 6) + this.getStrengthModifier();
+        System.out.println("Com um grito de guerra: " + this.getName() + " ataca " + " causando " + rolagemDado + " de dano!");
+        
+        return rolagemDado;
     }
 
     @Override
-    public void specialAttack (Player target) {
-        int rolagemDado = (int)(Math.random() * 6) + this.getStrength() * 2;
+    public int specialAttack() {
+        int rolagemDado = (int)(Math.random() * 6) + (this.getStrengthModifier() * 2);
 
-        System.out.println(this.getName() + " usa um ataque especial contra " + target.getName() + " causando " + rolagemDado + " de dano, mas sofre 5 de dano em retaliação!");
-        target.takeDamage(rolagemDado);
+        System.out.println(this.getName() + " usa um ataque especial contra " + " causando " + rolagemDado + " de dano, mas sofre 5 de dano em retaliação!");
+        
         this.takeDamage(5); //custo pra usar o ataque
+        return rolagemDado;
     }
 
 }

@@ -40,12 +40,20 @@ public abstract class Player {
         return strength;
     }
 
+    public int getStrengthModifier() {
+        return (strength - 10) / 2;
+    }
+
     public void setStrength(int strength) {
         this.strength = strength;
     }
 
     public int getIntelligence() {
         return intelligence;
+    }
+
+    public int getIntelligenceModifier() {
+        return (intelligence - 10) / 2;
     }
 
     public void setIntelligence(int intelligence) {
@@ -56,12 +64,20 @@ public abstract class Player {
         return charisma;
     }
 
+    public int getCharismaModifier() {
+        return (charisma - 10) / 2;
+    }
+
     public void setCharisma(int charisma) {
         this.charisma = charisma;
     }
 
     public int getDexterity() {
         return dexterity;
+    }
+
+    public int getDexterityModifier() {
+        return (dexterity - 10) / 2;
     }
 
     public void setDexterity(int dexterity) {
@@ -72,22 +88,19 @@ public abstract class Player {
         return constitution;
     }
 
+    public int getConstitutionModifier() {
+        return (constitution - 10) / 2;
+    }
+
     public void setConstitution(int constitution) {
         this.constitution = constitution;
     }
 
 
-    public abstract void attack (Player target);
+    public abstract int attack ();
 
-    public abstract void specialAttack (Player target);
+    public abstract int specialAttack ();
 
-    public int attack() {
-        return 0; 
-    }
-
-    public int specialAttack() {
-        return 0;
-    }
 
     public void takeDamage (int damage) {
         this.hp -= damage;

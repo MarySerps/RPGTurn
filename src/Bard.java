@@ -4,18 +4,18 @@ public class Bard extends Player {
     }
 
     @Override
-    public void attack (Player target) {
-        int rolagemDado = (int)(Math.random() * 6) + this.getCharisma();
+    public int attack () {
+        int rolagemDado = (int)(Math.random() * 6) + this.getCharismaModifier();
 
         System.out.println ("Tira sua viola e toca uma melodia, dando um dano de " + rolagemDado );
-        target.takeDamage(rolagemDado);
+        return rolagemDado;
     }
 
     @Override
-    public void specialAttack (Player target) {
-        int rolagemDado = (int)(Math.random() * 6 ) + this.getCharisma() + 5;
+    public int specialAttack () {
+        int rolagemDado = (int)(Math.random() * 6 ) + this.getCharismaModifier() + 5;
 
         System.out.println("Com um sorriso encantador, " + this.getName() + " toca uma canção hipnotizante, causando " + rolagemDado + " de dano e deixando o inimigo encantado por 1 turno!");
-        target.takeDamage(rolagemDado);
+        return rolagemDado;
     }
 }

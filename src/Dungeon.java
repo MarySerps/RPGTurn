@@ -24,7 +24,7 @@ public class Dungeon {
         if (escolha.equalsIgnoreCase("esquerda")){
             salaEsquerda();
         } else if (escolha.equalsIgnoreCase("direita")){
-                salaDireita();
+            salaDireita();
         }
     }
 
@@ -34,13 +34,14 @@ public class Dungeon {
         String escolha = scanner.nextLine();
 
         if (escolha.equalsIgnoreCase("sim")){
-            System.out.println ("Ao chegar perto do baú, você é atacado!!");
-            player.takeDamage(10);
+            batalhaDoBau();
+
         } else if (escolha.equalsIgnoreCase("não")){
             System.out.println ("Você decidiu não abrir o baú e seguiu para a próxima sala");
+
+            primeiraBatalha();
         }
 
-        primeiraBatalha();
     }
 
     private void salaDireita() {
@@ -59,9 +60,63 @@ public class Dungeon {
         primeiraBatalha();
     }
 
+    private void batalhaDoBau() {
+        System.out.println ("Ao chegar perto do baú, você é atacado por ele");
+        Enemy mimic = new Enemy ("Mímico", 58, 17);
+
+        player.takeDamage(mimic.attack());
+
+        System.out.println ("-- Batalha contra o Mímico Começou --");
+        while (player.getHp() > 0 && mimic.getHp() > 0){
+            System.out.println ("Escolha sua ação");
+            System.out.println ("1. Atacar");
+            System.out.println ("2. Tentar Fugir");
+            String acao = scanner.nextLine();
+
+            if (acao.equals("1")){
+                System.out.println ("Como você quer atacar?");
+                System.out.println ("1. Ataque Normal");
+                System.out.println ("2. Ataque Especial");
+                String tipoAtaque = scanner.nextLine();
+
+                if (tipoAtaque.equals("1")){
+                    int danoCausado = player.attack();
+                    System.out.println ("Você causou " + danoCausado + " de dano ao mímico!");
+                    mimic.takeDamage(danoCausado);
+                } else if (tipoAtaque.equals("2")){
+                    int danoCausado = player.specialAttack();
+                    System.out.println ("Você causou " + danoCausado + " de dano ao mímico com seu ataque especial!");
+                    mimic.takeDamage(danoCausado);
+                }
+
+                if (mimic.getHp() > 0){
+                    System.out.println ("O mímico contra-ataca, causando dano!!");
+                    player.takeDamage(mimic.attack());
+                }
+
+                } else if (acao.equals("2")){
+                System.out.println ("Você tenta fugir, mas o mímico é mais rápido e te ataca, causando dano!!");
+                player.takeDamage(mimic.attack());
+                System.out.println ("Mesmo ferido, você consegue fugir para a próxima sala");
+                } 
+                
+        }
+
+                if (player.getHp() <= 0){
+                    System.out.println ("Você foi derrotado, a masmora consome sua alma...");
+                    System.out.println ("!!GAME OVER!!");
+                } 
+                
+                else if (mimic.getHp() <= 0){
+                    System.out.println ("Parabéns, você derrotou o mímico e segue para a próxima sala!");
+                    player.addXp (20);  
+                    primeiraBatalha();
+                }
+    }
+
     private void primeiraBatalha() {
         System.out.println ("Ao entrar na sala, um monstro aparece!!");
-        Enemy monstroSobrio = new Enemy("Monstro Sombrio", 30, 5);
+        Enemy monstroSobrio = new Enemy("Monstro Sombrio");
 
         if (AjudouMago){
             System.out.println ("Em uma nuvem de fumaça, o mago aparece atrás de ti e cria um escudo mágico a sua volta, te protegendo do ataque do monstro");
