@@ -2,7 +2,6 @@ public abstract class Player {
 
     private String name;
     private int hp;
-    private int maxHp;
     private int strength;
     private int intelligence;
     private int charisma;
@@ -13,7 +12,6 @@ public abstract class Player {
     public Player (String name, int hp, int strength, int intelligence, int charisma, int dexterity, int constitution) {
         this.name = name;
         this.hp = hp;
-        this.maxHp = hp;
         this.strength = strength;
         this.intelligence = intelligence;
         this.charisma = charisma;
