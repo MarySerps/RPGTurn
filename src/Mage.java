@@ -7,6 +7,7 @@ public class Mage extends Player {
 
     @Override
     public void attack(Player target) {
+        // Simulando uma rolagem de um d6 para somar ao dano base do ataque
         int rolagemDado = (int)(Math.random() * 6) + this.getIntelligence();
         
         System.out.println( this.getName() + " molda energia pura nas mãos e dispara um dardo arcano, acertando " + target.getName() + " para " + rolagemDado + " de dano!");
