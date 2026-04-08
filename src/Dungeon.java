@@ -120,7 +120,7 @@ public class Dungeon {
     }
 
     private void salaDoTesouro() {
-        System.out.println ("Após derrotar o monstro, quando você entra na sala, um baú aparece no centro, você abre esse baú? (sim/não)");
+        System.out.println ("Após derrotar o monstro, quando você entra na sala, um baú aparece no centro, ele brilha intensamente, você abre esse baú? (sim/não)");
         String escolha = scanner.nextLine();
 
         if (escolha.equalsIgnoreCase("sim")){
@@ -129,5 +129,22 @@ public class Dungeon {
         } else if (escolha.equalsIgnoreCase("não")){
             System.out.println ("Você decide não abrir o baú e segue em frente para a próxima sala");
         }
+
+        salaDoGnomo();
+    }
+
+    private void salaDoGnomo() {
+        System.out.println ("Ao entrar na sala, um gnomo aparece, ele parece amigável e oferece ajuda para você sair da masmora, ele te dá uma poção de cura e um mapa do local");
+        System.out.println ("Você aceita a ajuda do gnomo? (sim/não)");
+        String escolha = scanner.nextLine();
+
+        if (escolha.equalsIgnoreCase("sim")){
+            System.out.println ("O gnomo te dá a poção de cura e o mapa, ele te deseja boa sorte em sua jornada");
+            player.addXp(20);
+        } else if (escolha.equalsIgnoreCase("não")){
+            System.out.println ("Você decide não aceitar a ajuda do gnomo e segue em frente para a próxima sala");
+        }
+
+        
     }
 }
