@@ -107,6 +107,9 @@ public abstract class Player {
             this.setHp(this.getHp() + 20);
             this.setStrength(this.getStrength() + 5);
             this.setIntelligence(this.getIntelligence() + 5);
+            this.setCharisma(this.getCharisma() + 5);
+            this.setDexterity(this.getDexterity() + 5);
+            this.setConstitution(this.getConstitution() + 5);
 
             this.xp -= 100; //reseta o xp para o próximo nível
         }

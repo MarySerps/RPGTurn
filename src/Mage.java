@@ -7,19 +7,17 @@ public class Mage extends Player {
 
     @Override
     public void attack(Player target) {
-        int dano = this.getIntelligence();
+        int rolagemDado = (int)(Math.random() * 6) + this.getIntelligence();
         
-        System.out.println( this.getName() + " molda energia pura nas mãos e dispara um dardo arcano, acertando " + target.getName() + " para " + dano + " de dano!");
-        
-        target.takeDamage(dano);
+        System.out.println( this.getName() + " molda energia pura nas mãos e dispara um dardo arcano, acertando " + target.getName() + " para " + rolagemDado + " de dano!");
+        target.takeDamage(rolagemDado);
     }
 
     @Override
     public void specialAttack(Player target) {
-        int danoMagico = this.getIntelligence() + 10;
+        int rolagemDado = (int)(Math.random() * 6) + this.getIntelligence() + 10;
         
-        System.out.println(" Sussurrando palavras antigas do abismo, " + this.getName() + " conjura uma explosão mágica violenta, infligindo " + danoMagico + " de dano no inimigo!");
-        
-        target.takeDamage(danoMagico);
+        System.out.println(" Sussurrando palavras antigas do abismo, " + this.getName() + " conjura uma explosão mágica violenta, infligindo " + rolagemDado + " de dano no inimigo!");
+        target.takeDamage(rolagemDado);
     }
 }
